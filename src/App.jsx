@@ -1,15 +1,15 @@
 import React from "react";
 import "./App.css";
-import Button from "./components/Elements/Button";
+import LoginPage from "./Pages/login";
+import RegisterPage from "./Pages/register";
+
 
 function App() {
   return (
     <>
-      <div className="flex gap-x-3" >
-      <Button color="bg-red-700">submit</Button>
-      <Button color="bg-slate-700">login</Button>
-      <Button color="bg-slate-700">logout</Button>
-      <Button/> 
+      <div className="flex justify-center min-h-screen items-center">
+        {/* <LoginPage />  */}
+        <RegisterPage />
       </div>
     </>
   );
