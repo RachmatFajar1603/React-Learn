@@ -1,12 +1,19 @@
 import Button from "../Elements/Button";
 import InputForm from "../Elements/Input";
+import { useNavigate } from "react-router-dom";
 
 const FormLogin = () => {
+  const navigate = useNavigate();
+
   const handleLogin = (event) => {
-    localStorage.setItem("email", event.target.email.value); 
-    localStorage.setItem("password", event.target.password.value); 
     event.preventDefault();
-    window.location.href = "/product";
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    
+    localStorage.setItem("email", email); 
+    localStorage.setItem("password", password); 
+    
+    navigate("/product");
   };
 
   return (
@@ -15,7 +22,7 @@ const FormLogin = () => {
         label="Email"
         type="email"
         placeholder="example@gmail.com"
-        name="email "
+        name="email"
       />
       <InputForm
         label="Password"
@@ -24,7 +31,7 @@ const FormLogin = () => {
         name="password"
       />
 
-      <Button classname="bg-blue-600 w-full" type="submit">Login</Button>
+      <Button className="bg-blue-600 w-full" type="submit">Login</Button>
     </form>
   );
 };
